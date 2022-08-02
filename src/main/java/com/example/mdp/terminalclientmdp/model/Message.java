@@ -1,4 +1,4 @@
-package com.example.mdp.terminalclientmdp;
+package com.example.mdp.terminalclientmdp.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controller" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controller" xmlns:intf="http://controller" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controller" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="createTerminal">
+    <complexType>
+     <sequence>
+      <element name="t" type="tns1:Terminal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createTerminalResponse">
+    <complexType>
+     <sequence>
+      <element name="createTerminalReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteTerminal">
+    <complexType>
+     <sequence>
+      <element name="terminalID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteTerminalResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteTerminalReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateTerminal">
+    <complexType>
+     <sequence>
+      <element name="terminalID" type="xsd:int"/>
+      <element name="t" type="tns1:Terminal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateTerminalResponse">
+    <complexType>
+     <sequence>
+      <element name="updateTerminalReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTerminals">
+    <complexType/>
+   </element>
+   <element name="getTerminalsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getTerminalsReturn" type="tns1:Terminal"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Terminal">
+    <sequence>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="terminalID" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deleteTerminalResponse">
+
+      <wsdl:part element="impl:deleteTerminalResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTerminalsRequest">
+
+      <wsdl:part element="impl:getTerminals" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createTerminalRequest">
+
+      <wsdl:part element="impl:createTerminal" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTerminalsResponse">
+
+      <wsdl:part element="impl:getTerminalsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteTerminalRequest">
+
+      <wsdl:part element="impl:deleteTerminal" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createTerminalResponse">
+
+      <wsdl:part element="impl:createTerminalResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateTerminalRequest">
+
+      <wsdl:part element="impl:updateTerminal" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateTerminalResponse">
+
+      <wsdl:part element="impl:updateTerminalResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CentralRepository">
+
+      <wsdl:operation name="createTerminal">
+
+         <wsdl:input message="impl:createTerminalRequest" name="createTerminalRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createTerminalResponse" name="createTerminalResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteTerminal">
+
+         <wsdl:input message="impl:deleteTerminalRequest" name="deleteTerminalRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteTerminalResponse" name="deleteTerminalResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateTerminal">
+
+         <wsdl:input message="impl:updateTerminalRequest" name="updateTerminalRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateTerminalResponse" name="updateTerminalResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTerminals">
+
+         <wsdl:input message="impl:getTerminalsRequest" name="getTerminalsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTerminalsResponse" name="getTerminalsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CentralRepositorySoapBinding" type="impl:CentralRepository">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createTerminal">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createTerminalRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createTerminalResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteTerminal">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteTerminalRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteTerminalResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateTerminal">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateTerminalRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateTerminalResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTerminals">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTerminalsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTerminalsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CentralRepositoryService">
+
+      <wsdl:port binding="impl:CentralRepositorySoapBinding" name="CentralRepository">
+
+         <wsdlsoap:address location="http://localhost:8080/CentralRepository/services/CentralRepository"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

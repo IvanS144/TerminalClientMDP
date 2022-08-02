@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:controller="com.example.mdp.terminalclientmdp.ChatController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="1081.0" style="-fx-border-color: #05C7F2; -fx-border-width: 3; -fx-padding: 0; -fx-background-color: #0583F2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mdp.terminalclientmdp.controllers.ChatController">
    <left>
-      <ListView fx:id="contactsList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="contactsList" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0442BF; -fx-border-color: #05C7F2; -fx-border-width: 0 2 0 0;" BorderPane.alignment="CENTER" />
    </left>
    <center>
-      <BorderPane fx:id="vBoxPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <BorderPane fx:id="vBoxPane" prefHeight="603.0" prefWidth="882.0" BorderPane.alignment="CENTER">
+         <bottom>
+            <AnchorPane prefHeight="66.0" prefWidth="874.0" style="-fx-background-color: black; -fx-border-color: #05C7F2; -fx-border-width: 2 0 0 0;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="sendButton" layoutX="746.0" layoutY="9.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="42.0" prefWidth="55.0" text="Pošalji" />
+                  <TextArea fx:id="textArea" layoutX="24.0" layoutY="9.0" prefHeight="48.0" prefWidth="714.0" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
    </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="1090.0" style="-fx-background-color: #0442BF; -fx-border-color: #05C7F2; -fx-border-width: 0 0 2 0;" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" style="-fx-background-color: #05AFF2; -fx-border-color: #0583F2; -fx-border-width: 2; -fx-border-radius: 2;" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+        </items>
+      </ToolBar>
+   </top>
 </BorderPane>

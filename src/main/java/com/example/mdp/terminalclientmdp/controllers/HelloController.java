@@ -1,4 +1,4 @@
-package com.example.mdp.terminalclientmdp;
+package com.example.mdp.terminalclientmdp.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
